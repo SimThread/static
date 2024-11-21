@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stop Propagation Example</title>
+</head>
+<body>
+  <div id="parent">
+    <div id="child">Click me</div>
+  </div>
+
+  <script>
+    document.getElementById('parent').addEventListener('click', function(event) {
+        event.stopPropagation();
+      console.log('Parent element clicked');
+    }, true);
+
+    document.getElementById('child').addEventListener('click', function(event) {
+      console.log('Child element clicked');
+      event.stopPropagation(); // 阻止事件传播
+    });
+  </script>
+</body>
+</html>
